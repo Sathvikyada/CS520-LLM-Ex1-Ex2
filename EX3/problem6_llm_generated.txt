@@ -1,0 +1,19 @@
+LLM Generated Specifications for find_max(nums: list[int]) -> int:
+
+Let 'res' denote the expected return value of 'find_max(nums)'.
+
+Specification 1:
+assert res >= max(nums)  # The result must be at least as large as the maximum element
+
+Specification 2:
+assert res in nums  # The result must be an element present in the input list
+
+Specification 3:
+assert all(res >= x for x in nums)  # The result must be greater than or equal to every element in nums
+
+Specification 4:
+assert res == sorted(nums)[-1]  # The result must equal the last element when nums is sorted
+
+Specification 5:
+assert len(nums) == 1 implies res == nums[0]  # For single-element lists, result equals that element
+

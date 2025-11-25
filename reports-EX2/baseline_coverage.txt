@@ -12,7 +12,7 @@ Baseline Coverage Summary
 9 – merge_dicts         4/4       100      100       All merge paths exercised by provided assertions.
 10 – second_largest     5/5       100      100       Duplicate-handling path covered via provided failure case.
 
-Post-Additional Test Coverage Summary
+Post-LLM Test Coverage Summary
 
    Problem            Tests Passed  Line %   Branch %   Notes
 1 – sum_of_digits          4/4      100       N/A      Straight-line logic; full statement coverage.

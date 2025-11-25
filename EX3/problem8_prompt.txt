@@ -1,0 +1,16 @@
+Problem description: Write a function that returns True if the integer n is a prime number, and False otherwise. The function takes an integer greater than or equal to 0.
+
+Method signature: def is_prime(n: int) -> bool:
+
+Please write formal specifications as Python assertions that describe the correct behavior of this method.
+
+Let 'res' denote the expected return value of 'is_prime(n)'.
+
+Do not call 'is_prime()' in your assertions.
+
+Do not use methods with side effects such as print(), file I/O, random number generation, or timing functions.
+
+Express the relationship between 'n' and 'res' using pure arithmetic and boolean logic only.
+
+Generate approximately 5 distinct specifications that cover various cases including boundary conditions, edge cases, and general behavior.
+

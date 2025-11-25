@@ -1,0 +1,13 @@
+Problem description: Write a function that returns the maximum value in a list without using the built-in `max()` function. The function takes a list of integers (non-empty) and returns the largest integer in the list.
+
+Method signature: def find_max(nums: list[int]) -> int:
+
+Please write formal specifications as Python assertions that describe the correct behavior of this method.
+
+Let 'res' denote the expected return value of 'find_max(nums)'.
+
+Do not use methods with side effects such as print(), file I/O, random number generation, or timing functions.
+
+Express the relationship between 'nums' and 'res' using pure arithmetic, boolean logic, and list operations only.
+
+Generate 5 distinct specifications that cover various cases including boundary conditions, edge cases, and general behavior.

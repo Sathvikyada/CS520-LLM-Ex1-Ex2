@@ -1,0 +1,19 @@
+LLM Generated Specifications for is_prime(n: int) -> bool:
+
+Let 'res' denote the expected return value of 'is_prime(n)'.
+
+Specification 1:
+assert (n <= 1) == (not res)  # Numbers less than or equal to 1 are not prime
+
+Specification 2:
+assert (n == 2) == res  # 2 is the only even prime number
+
+Specification 3:
+assert (n % 2 == 0 and n > 2) == (not res)  # Even numbers greater than 2 are not prime
+
+Specification 4:
+assert (n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))) == res  # Prime if no divisors in range [2, sqrt(n)]
+
+Specification 5:
+assert (n == 3 or n == 5 or n == 7) == res  # Small known primes return True
+
