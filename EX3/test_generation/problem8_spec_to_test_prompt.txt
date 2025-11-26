@@ -1,0 +1,19 @@
+Generate test cases for the function is_prime(n: int) -> bool based on the following formal specifications.
+
+Function signature: def is_prime(n: int) -> bool:
+
+Formal specifications (all correct):
+1. assert (n <= 1) == (not res)  # Numbers less than or equal to 1 are not prime
+2. assert (n == 2) == res  # 2 is the only even prime number
+3. assert (n % 2 == 0 and n > 2) == (not res)  # Even numbers greater than 2 are not prime
+4. assert (n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))) == res  # Prime if no divisors in range [2, sqrt(n)]
+5. assert (n == 3 or n == 5 or n == 7) == res  # Small known primes return True
+
+Generate pytest test cases that verify these specifications. Each test should:
+- Be clearly labeled as "spec-guided" in the test name
+- Test one or more of the specifications above
+- Use pytest.mark.parametrize where appropriate
+- Include edge cases and boundary conditions implied by the specifications
+
+Generate approximately 5-7 test cases that systematically cover the logical properties expressed in the specifications.
+

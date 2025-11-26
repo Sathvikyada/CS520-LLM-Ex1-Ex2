@@ -1,0 +1,18 @@
+Generate test cases for the function find_max(nums: list[int]) -> int based on the following formal specifications.
+
+Function signature: def find_max(nums: list[int]) -> int:
+
+Corrected formal specifications:
+1. assert res in nums  # The result must be an element present in the input list
+2. assert all(res >= x for x in nums)  # The result must be greater than or equal to every element in nums
+3. assert (len(nums) != 1) or (res == nums[0])  # For single-element lists, result equals that element
+4. assert res in nums and all(res >= x for x in nums)  # Combined: res is in nums and res >= all elements
+
+Generate pytest test cases that verify these specifications. Each test should:
+- Be clearly labeled as "spec-guided" in the test name
+- Test one or more of the specifications above
+- Use pytest.mark.parametrize where appropriate
+- Include edge cases and boundary conditions implied by the specifications
+
+Generate approximately 5-7 test cases that systematically cover the logical properties expressed in the specifications.
+

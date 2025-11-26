@@ -1,0 +1,70 @@
+EX3 LLM Generated Test Results
+
+PROBLEM 6: find_max(nums: list[int]) -> int
+
+EX2 Tests (Original):
+Test Cases:
+1. test_find_max (parametrized: [1,2,3,4,5], [-1,-5,-2], [0])
+2. test_find_max_raises_for_empty_list
+3. test_find_max_all_negative_strictly_decreasing
+4. test_find_max_large_magnitude_mix
+5. test_find_max_duplicate_max_values
+6. test_find_max_negative_and_positive_mix
+
+Coverage Results:
+- Statement Coverage: 100% (9/9 statements)
+- Branch Coverage: 100% (6/6 branches)
+- Tests Passed: 8/8
+
+EX3 Tests (Generated from formal specifications):
+Test Cases Added:
+1. test_spec_guided_result_in_list - Verifies Spec 1 & 4: res in nums
+2. test_spec_guided_result_greater_equal_all - Verifies Spec 2 & 4: all(res >= x)
+3. test_spec_guided_single_element_list - Verifies Spec 3: single element case
+4. test_spec_guided_combined_property - Verifies Spec 4: combined property
+5. test_spec_guided_all_elements_equal - Edge case: all elements equal
+6. test_spec_guided_negative_numbers - Edge case: all negative
+7. test_spec_guided_mixed_signs - Edge case: mixed positive/negative
+
+Coverage Results (Original + Spec-Guided):
+- Statement Coverage: 100% (9/9 statements)
+- Branch Coverage: 100% (6/6 branches)
+- Tests Passed: 21/21 (8 original + 13 spec-guided)
+
+Coverage Change: No change (both 100% line, 100% branch)
+
+
+Problem 8: is_prime(n: int) -> bool
+
+EX2 Tests (Original):
+Test Cases:
+1. test_is_prime (parametrized: 2, 9, 13, 1, 0)
+2. test_is_prime_even_composite
+3. test_is_prime_negative_number
+4. test_is_prime_large_prime
+5. test_is_prime_square_of_prime
+6. test_is_prime_carmichael_number
+
+Coverage Results:
+- Statement Coverage: 100% (12/12 statements)
+- Branch Coverage: 100% (10/10 branches)
+- Tests Passed: 10/10
+
+EX3 Tests (Generated from formal specifications):
+Test Cases Added:
+1. test_spec_guided_non_prime_less_equal_one - Verifies Spec 1: (n <= 1) == (not res)
+2. test_spec_guided_two_is_prime - Verifies Spec 2: (n == 2) == res
+3. test_spec_guided_even_greater_than_two_not_prime - Verifies Spec 3: even > 2
+4. test_spec_guided_prime_no_divisors - Verifies Spec 4: prime definition
+5. test_spec_guided_small_known_primes - Verifies Spec 5: small primes (3, 5, 7)
+6. test_spec_guided_composite_has_divisors - Additional: composite verification
+7. test_spec_guided_boundary_zero_one - Additional: boundary cases
+
+Coverage Results (Original + Spec-Guided):
+- Statement Coverage: 100% (12/12 statements)
+- Branch Coverage: 100% (10/10 branches)
+- Tests Passed: 46/46 (10 original + 36 spec-guided)
+
+COMPARISON:
+-----------
+Coverage Change: No change (both 100% line, 100% branch)

@@ -1,0 +1,53 @@
+LLM-Generated Spec-Guided Test Cases for is_prime:
+
+# Spec 1: (n <= 1) == (not res)
+@pytest.mark.parametrize("n", [0, 1, -1, -5])
+def test_spec_guided_non_prime_less_equal_one(n):
+    """Spec 1: Numbers <= 1 are not prime."""
+    res = is_prime(n)
+    assert (n <= 1) == (not res)
+
+# Spec 2: (n == 2) == res
+def test_spec_guided_two_is_prime():
+    """Spec 2: 2 is the only even prime number."""
+    n = 2
+    res = is_prime(n)
+    assert (n == 2) == res
+
+# Spec 3: (n % 2 == 0 and n > 2) == (not res)
+@pytest.mark.parametrize("n", [4, 6, 8, 10, 12, 14, 16, 18, 20])
+def test_spec_guided_even_greater_than_two_not_prime(n):
+    """Spec 3: Even numbers > 2 are not prime."""
+    res = is_prime(n)
+    assert (n % 2 == 0 and n > 2) == (not res)
+
+# Spec 4: (n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))) == res
+@pytest.mark.parametrize("n", [3, 5, 7, 11, 13, 17, 19, 23, 29, 31])
+def test_spec_guided_prime_no_divisors(n):
+    """Spec 4: Prime if no divisors in range [2, sqrt(n)]."""
+    res = is_prime(n)
+    expected = (n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1)))
+    assert expected == res
+
+# Spec 5: (n == 3 or n == 5 or n == 7) == res
+@pytest.mark.parametrize("n, expected", [(3, True), (5, True), (7, True)])
+def test_spec_guided_small_known_primes(n, expected):
+    """Spec 5: Small known primes return True."""
+    res = is_prime(n)
+    assert (n == 3 or n == 5 or n == 7) == res
+
+# Additional: Composite numbers with divisors
+@pytest.mark.parametrize("n", [9, 15, 21, 25, 27, 33, 35, 49])
+def test_spec_guided_composite_has_divisors(n):
+    """Verify composite numbers have divisors in range [2, sqrt(n)]."""
+    res = is_prime(n)
+    has_divisor = any(n % i == 0 for i in range(2, int(n**0.5) + 1))
+    if has_divisor and n > 1:
+        assert res is False
+
+# Boundary: Testing spec 1 and spec 3 together
+def test_spec_guided_boundary_zero_one():
+    """Test boundary cases for spec 1."""
+    assert is_prime(0) is False
+    assert is_prime(1) is False
+

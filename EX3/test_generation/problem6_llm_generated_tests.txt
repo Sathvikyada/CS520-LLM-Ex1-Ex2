@@ -1,0 +1,61 @@
+LLM-Generated Spec-Guided Test Cases for find_max:
+
+# Spec 1 & 4: res in nums
+def test_spec_guided_result_in_list():
+    """Spec 1 & 4: Verify result is an element of the input list."""
+    nums = [5, 2, 8, 1, 9]
+    res = find_max(nums)
+    assert res in nums
+
+# Spec 2 & 4: all(res >= x for x in nums)
+def test_spec_guided_result_greater_equal_all():
+    """Spec 2 & 4: Verify result is >= all elements."""
+    nums = [3, 7, 2, 9, 4]
+    res = find_max(nums)
+    assert all(res >= x for x in nums)
+
+# Spec 3: (len(nums) != 1) or (res == nums[0])
+@pytest.mark.parametrize("nums", [[42], [0], [-5], [100]])
+def test_spec_guided_single_element_list(nums):
+    """Spec 3: For single-element lists, result equals that element."""
+    res = find_max(nums)
+    assert res == nums[0]
+
+# Combined spec: res in nums and all(res >= x for x in nums)
+@pytest.mark.parametrize("nums", [
+    [1, 2, 3],
+    [-10, -5, -1],
+    [0, 0, 0],
+    [100, 50, 75, 25],
+])
+def test_spec_guided_combined_property(nums):
+    """Spec 4: Combined property - res in nums and res >= all elements."""
+    res = find_max(nums)
+    assert res in nums
+    assert all(res >= x for x in nums)
+
+# Edge case: all elements equal
+def test_spec_guided_all_elements_equal():
+    """Verify spec holds when all elements are equal."""
+    nums = [7, 7, 7, 7]
+    res = find_max(nums)
+    assert res in nums
+    assert all(res >= x for x in nums)
+    assert res == 7
+
+# Edge case: negative numbers
+def test_spec_guided_negative_numbers():
+    """Verify spec holds for negative numbers."""
+    nums = [-1, -5, -3, -2]
+    res = find_max(nums)
+    assert res in nums
+    assert all(res >= x for x in nums)
+
+# Edge case: mixed positive and negative
+def test_spec_guided_mixed_signs():
+    """Verify spec holds for mixed positive and negative numbers."""
+    nums = [-10, 5, -3, 8, -1]
+    res = find_max(nums)
+    assert res in nums
+    assert all(res >= x for x in nums)
+
